@@ -6,18 +6,19 @@
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
 
-#include "construction.hh"
-#include "physics.hh"
-#include "action.hh"
+#include "DetectorConstruction.hh"
+#include "PhysicsList.hh"
+#include "ActionInitialization.hh"
+
 
 int main(int argc, char** argv)
 {
 
     G4RunManager *runManager = new G4RunManager();
 
-    runManager->SetUserInitialization(new MyDetectorConstruction());
-    runManager->SetUserInitialization(new MyPhysicsList());
-    runManager->SetUserInitialization(new MyActionInitialization());
+    runManager->SetUserInitialization(new DetectorConstruction());
+    runManager->SetUserInitialization(new PhysicsList());
+    runManager->SetUserInitialization(new ActionInitialization());
 
     runManager->Initialize();
     
@@ -35,8 +36,8 @@ int main(int argc, char** argv)
     //UImanager->ApplyCommand("/run/verbose 2");
     UImanager->ApplyCommand("/vis/drawVolume");
     
-    UImanager->ApplyCommand("/vis/viewer/set/autoRefresh true");
-    UImanager->ApplyCommand("/vis/scene/add/trajectoires smooth");
+    UImanager->ApplyCommand("/vis/viewer/set/autoRefresh /true");
+    UImanager->ApplyCommand("/vis/scene/add/trajectoires /smooth");
 
     UImanager->ApplyCommand("/vis/modeling/trajectories/create/drawByCharge");
     UImanager->ApplyCommand("/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true");
