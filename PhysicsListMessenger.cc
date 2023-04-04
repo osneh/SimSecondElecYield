@@ -23,47 +23,49 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm5/include/PrimaryGeneratorAction.hh
-/// \brief Definition of the PrimaryGeneratorAction class
+/// \file electromagnetic/TestEm5/src/PhysicsListMessenger.cc
+/// \brief Implementation of the PhysicsListMessenger class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h 1
+#include "PhysicsListMessenger.hh"
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
-#include "globals.hh"
-
-class G4Event;
-class DetectorConstruction;
-class PrimaryGeneratorMessenger;
+#include "PhysicsList.hh"
+#include "G4UIdirectory.hh"
+#include "G4UIcmdWithAString.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
+PhysicsListMessenger::PhysicsListMessenger(PhysicsList* pPhys)
+  :G4UImessenger(),fPhysicsList(pPhys)
 {
-  public:
-    PrimaryGeneratorAction(DetectorConstruction*);    
-   ~PrimaryGeneratorAction();
+  fPhysDir = new G4UIdirectory("/testem/phys/");
+  fPhysDir->SetGuidance("physics list commands");
 
-  public:
-    void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) {fRndmBeam = val;};   
-    virtual void GeneratePrimaries(G4Event*);
-    G4ParticleGun* GetParticleGun() {return fParticleGun;};
+  fListCmd = new G4UIcmdWithAString("/testem/phys/addPhysics",this);  
+  fListCmd->SetGuidance("Add modula physics list.");
+  fListCmd->SetParameterName("PList",false);
+  fListCmd->AvailableForStates(G4State_PreInit);
+  fListCmd->SetToBeBroadcasted(false);      
 
-  private:
-    G4ParticleGun*         fParticleGun;
-    DetectorConstruction*  fDetector;
-    G4double               fRndmBeam;
-    
-    PrimaryGeneratorMessenger* fGunMessenger;     
-};
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#endif
+PhysicsListMessenger::~PhysicsListMessenger()
+{
+  delete fListCmd;
+  delete fPhysDir;
+}
 
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void PhysicsListMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
+{ 
+  if( command == fListCmd )
+    { fPhysicsList->AddPhysicsList(newValue); }
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

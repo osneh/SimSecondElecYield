@@ -23,44 +23,51 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm5/include/PrimaryGeneratorAction.hh
-/// \brief Definition of the PrimaryGeneratorAction class
+/// \file electromagnetic/TestEm1/include/StepMax.hh
+/// \brief Definition of the StepMax class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h 1
+#ifndef StepMax_h
+#define StepMax_h 1
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
 #include "globals.hh"
+#include "G4VDiscreteProcess.hh"
+#include "G4ParticleDefinition.hh"
+#include "G4Step.hh"
 
-class G4Event;
-class DetectorConstruction;
-class PrimaryGeneratorMessenger;
+class StepMaxMessenger;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
+class StepMax : public G4VDiscreteProcess
 {
   public:
-    PrimaryGeneratorAction(DetectorConstruction*);    
-   ~PrimaryGeneratorAction();
 
-  public:
-    void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) {fRndmBeam = val;};   
-    virtual void GeneratePrimaries(G4Event*);
-    G4ParticleGun* GetParticleGun() {return fParticleGun;};
+    StepMax(const G4String& processName = "UserMaxStep");
+   ~StepMax();
+
+    G4bool IsApplicable(const G4ParticleDefinition&) override;
+
+    void SetMaxStep(G4double);
+
+    G4double GetMaxStep() {return fMaxChargedStep;};
+
+    G4double PostStepGetPhysicalInteractionLength(const G4Track& track,
+                                       G4double previousStepSize,
+                                       G4ForceCondition* condition) override;
+
+    G4VParticleChange* PostStepDoIt(const G4Track&, const G4Step&) override;
+
+   G4double GetMeanFreePath(const G4Track&,G4double,G4ForceCondition*) override;
 
   private:
-    G4ParticleGun*         fParticleGun;
-    DetectorConstruction*  fDetector;
-    G4double               fRndmBeam;
-    
-    PrimaryGeneratorMessenger* fGunMessenger;     
+
+     G4double fMaxChargedStep;
+     
+     StepMaxMessenger* fMess;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

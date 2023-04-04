@@ -23,44 +23,35 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm5/include/PrimaryGeneratorAction.hh
-/// \brief Definition of the PrimaryGeneratorAction class
+/// \file electromagnetic/TestEm5/include/PhysListEmStandard.hh
+/// \brief Definition of the PhysListEmStandard class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h 1
+#ifndef PhysListEmStandard_h
+#define PhysListEmStandard_h 1
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
+#include "G4VPhysicsConstructor.hh"
 #include "globals.hh"
 
-class G4Event;
-class DetectorConstruction;
-class PrimaryGeneratorMessenger;
-
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
+class PhysListEmStandard : public G4VPhysicsConstructor
 {
-  public:
-    PrimaryGeneratorAction(DetectorConstruction*);    
-   ~PrimaryGeneratorAction();
+public: 
+  PhysListEmStandard(const G4String& name = "standard");
+ ~PhysListEmStandard();
 
-  public:
-    void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) {fRndmBeam = val;};   
-    virtual void GeneratePrimaries(G4Event*);
-    G4ParticleGun* GetParticleGun() {return fParticleGun;};
-
-  private:
-    G4ParticleGun*         fParticleGun;
-    DetectorConstruction*  fDetector;
-    G4double               fRndmBeam;
-    
-    PrimaryGeneratorMessenger* fGunMessenger;     
+public: 
+  // This method is dummy for physics
+  virtual void ConstructParticle() {};
+ 
+  // This method will be invoked in the Construct() method.
+  // each physics process will be instantiated and
+  // registered to the process manager of each particle type 
+  virtual void ConstructProcess();
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

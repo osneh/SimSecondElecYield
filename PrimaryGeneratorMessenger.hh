@@ -23,44 +23,40 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm5/include/PrimaryGeneratorAction.hh
-/// \brief Definition of the PrimaryGeneratorAction class
+/// \file electromagnetic/TestEm5/include/PrimaryGeneratorMessenger.hh
+/// \brief Definition of the PrimaryGeneratorMessenger class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h 1
+#ifndef PrimaryGeneratorMessenger_h
+#define PrimaryGeneratorMessenger_h 1
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
+#include "G4UImessenger.hh"
 #include "globals.hh"
 
-class G4Event;
-class DetectorConstruction;
-class PrimaryGeneratorMessenger;
+class PrimaryGeneratorAction;
+class G4UIdirectory;
+class G4UIcmdWithoutParameter;
+class G4UIcmdWithADouble;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
+class PrimaryGeneratorMessenger: public G4UImessenger
 {
   public:
-    PrimaryGeneratorAction(DetectorConstruction*);    
-   ~PrimaryGeneratorAction();
-
-  public:
-    void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) {fRndmBeam = val;};   
-    virtual void GeneratePrimaries(G4Event*);
-    G4ParticleGun* GetParticleGun() {return fParticleGun;};
-
-  private:
-    G4ParticleGun*         fParticleGun;
-    DetectorConstruction*  fDetector;
-    G4double               fRndmBeam;
+    PrimaryGeneratorMessenger(PrimaryGeneratorAction*);
+   ~PrimaryGeneratorMessenger();
     
-    PrimaryGeneratorMessenger* fGunMessenger;     
+    virtual void SetNewValue(G4UIcommand*, G4String);
+    
+  private:
+    PrimaryGeneratorAction*    fAction;
+    
+    G4UIdirectory*             fGunDir;      
+    G4UIcmdWithoutParameter*   fDefaultCmd;
+    G4UIcmdWithADouble*        fRndmCmd;    
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

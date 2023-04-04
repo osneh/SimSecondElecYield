@@ -23,55 +23,91 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
+/// \file electromagnetic/TestEm5/src/RunAction.cc
+/// \brief Implementation of the RunAction class
 //
-/// \file ActionInitialization.cc
-/// \brief Implementation of the ActionInitialization class
+//
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#include "ActionInitialization.hh"
+#include "RunAction.hh"
 #include "DetectorConstruction.hh"
 #include "PrimaryGeneratorAction.hh"
-#include "RunAction.hh"
-#include "EventAction.hh"
-#include "TrackingAction.hh"
-#include "SteppingAction.hh"
-#include "StackingAction.hh"
+#include "HistoManager.hh"
+#include "Run.hh"
+
+#include "G4Run.hh"
+#include "G4UnitsTable.hh"
+#include "G4EmCalculator.hh"
+
+#include "Randomize.hh"
+#include "G4SystemOfUnits.hh"
+#include <iomanip>
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-ActionInitialization::ActionInitialization(DetectorConstruction* det)
- : G4VUserActionInitialization(),fDetector(det)
-{ }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-ActionInitialization::~ActionInitialization()
-{ }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-void ActionInitialization::BuildForMaster() const
-{
- SetUserAction(new RunAction(fDetector));
+RunAction::RunAction(DetectorConstruction* det, PrimaryGeneratorAction* kin)
+:G4UserRunAction(),fDetector(det), fPrimary(kin), fRun(0), fHistoManager(0)
+{ 
+  // Book predefined histograms
+  fHistoManager = new HistoManager();
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void ActionInitialization::Build() const
+RunAction::~RunAction()
+{ 
+  delete fHistoManager;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+G4Run* RunAction::GenerateRun()
+{ 
+  fRun = new Run(fDetector);
+  return fRun;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void RunAction::BeginOfRunAction(const G4Run*)
 {
-  PrimaryGeneratorAction* primary = new PrimaryGeneratorAction(fDetector);
-  SetUserAction(primary);
- 
-  RunAction* runaction = new RunAction(fDetector,primary);
-  SetUserAction(runaction); 
+  // show Rndm status
+  if (isMaster) G4Random::showEngineStatus();
+     
+  // keep run condition
+  if ( fPrimary ) { 
+    G4ParticleDefinition* particle 
+      = fPrimary->GetParticleGun()->GetParticleDefinition();
+    G4double energy = fPrimary->GetParticleGun()->GetParticleEnergy();
+    fRun->SetPrimary(particle, energy);
+  }
   
-  EventAction* eventaction = new EventAction();
-  SetUserAction(eventaction);
+  //histograms
+  //        
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  if ( analysisManager->IsActive() ) {
+    analysisManager->OpenFile();
+  } 
+}
 
-  SetUserAction(new TrackingAction(fDetector,eventaction));
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-  SetUserAction(new SteppingAction(fDetector,eventaction));
+void RunAction::EndOfRunAction(const G4Run*)
+{  
+  // print Run summary
+  //
+  if (isMaster) fRun->EndOfRun();    
+      
+  // save histograms
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();  
+  if ( analysisManager->IsActive() ) {    
+    analysisManager->Write();
+    analysisManager->CloseFile();
+  }  
 
-  SetUserAction(new StackingAction(eventaction));
-}  
+  // show Rndm status
+  if (isMaster) G4Random::showEngineStatus();
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -23,47 +23,43 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm5/include/PrimaryGeneratorAction.hh
-/// \brief Definition of the PrimaryGeneratorAction class
+/// \file electromagnetic/TestEm5/include/TrackingAction.hh
+/// \brief Definition of the TrackingAction class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h 1
+#ifndef TrackingAction_h
+#define TrackingAction_h 1
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
+#include "G4UserTrackingAction.hh"
 #include "globals.hh"
 
-class G4Event;
 class DetectorConstruction;
-class PrimaryGeneratorMessenger;
+class EventAction;
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
-{
-  public:
-    PrimaryGeneratorAction(DetectorConstruction*);    
-   ~PrimaryGeneratorAction();
+class TrackingAction : public G4UserTrackingAction {
 
-  public:
-    void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) {fRndmBeam = val;};   
-    virtual void GeneratePrimaries(G4Event*);
-    G4ParticleGun* GetParticleGun() {return fParticleGun;};
-
-  private:
-    G4ParticleGun*         fParticleGun;
-    DetectorConstruction*  fDetector;
-    G4double               fRndmBeam;
+  public:  
+    TrackingAction(DetectorConstruction*,EventAction*);
+   ~TrackingAction() {};
+   
+    virtual void  PreUserTrackingAction(const G4Track*);   
+    virtual void PostUserTrackingAction(const G4Track*);
     
-    PrimaryGeneratorMessenger* fGunMessenger;     
+  private:
+    DetectorConstruction* fDetector;
+    EventAction*          fEventAction;
+    
+    G4double fXstartAbs, fXendAbs;
+    G4double fPrimaryCharge;
+    G4double fDirX;
+    G4double x0_outOfWorld;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif
-

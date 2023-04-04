@@ -23,47 +23,53 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm5/include/PrimaryGeneratorAction.hh
-/// \brief Definition of the PrimaryGeneratorAction class
+/// \file electromagnetic/TestEm5/src/SteppingAction.cc
+/// \brief Implementation of the SteppingAction class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h 1
+#include "SteppingAction.hh"
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
-#include "globals.hh"
+#include "DetectorConstruction.hh"
+#include "RunAction.hh"
+#include "EventAction.hh"
+#include "HistoManager.hh"
 
-class G4Event;
-class DetectorConstruction;
-class PrimaryGeneratorMessenger;
+#include "G4Step.hh"
+#include "G4UnitsTable.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
+SteppingAction::SteppingAction(DetectorConstruction* DET,
+                               EventAction* EA)
+:G4UserSteppingAction(),fDetector(DET), fEventAction(EA)
+{}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+SteppingAction::~SteppingAction()
+{}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void SteppingAction::UserSteppingAction(const G4Step* aStep)
 {
-  public:
-    PrimaryGeneratorAction(DetectorConstruction*);    
-   ~PrimaryGeneratorAction();
-
-  public:
-    void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) {fRndmBeam = val;};   
-    virtual void GeneratePrimaries(G4Event*);
-    G4ParticleGun* GetParticleGun() {return fParticleGun;};
-
-  private:
-    G4ParticleGun*         fParticleGun;
-    DetectorConstruction*  fDetector;
-    G4double               fRndmBeam;
-    
-    PrimaryGeneratorMessenger* fGunMessenger;     
-};
+  if (aStep->GetPreStepPoint()->GetTouchableHandle()->GetVolume() 
+    != fDetector->GetAbsorber()) return;
+   
+  fEventAction->AddEnergy (aStep->GetTotalEnergyDeposit());
+   
+  G4double charge = aStep->GetTrack()->GetDefinition()->GetPDGCharge();
+  if (charge != 0.) { 
+    fEventAction->AddTrakLenCharg(aStep->GetStepLength());
+    fEventAction->CountStepsCharg();
+  } else {
+    fEventAction->AddTrakLenNeutr(aStep->GetStepLength());
+    fEventAction->CountStepsNeutr();
+  }
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-#endif
 

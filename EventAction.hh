@@ -23,47 +23,53 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm5/include/PrimaryGeneratorAction.hh
-/// \brief Definition of the PrimaryGeneratorAction class
+/// \file electromagnetic/TestEm5/include/EventAction.hh
+/// \brief Definition of the EventAction class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h 1
+#ifndef EventAction_h
+#define EventAction_h 1
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
+#include "G4UserEventAction.hh"
 #include "globals.hh"
 
-class G4Event;
-class DetectorConstruction;
-class PrimaryGeneratorMessenger;
-
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
+class EventAction : public G4UserEventAction
 {
   public:
-    PrimaryGeneratorAction(DetectorConstruction*);    
-   ~PrimaryGeneratorAction();
+    EventAction();
+   ~EventAction();
 
   public:
-    void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) {fRndmBeam = val;};   
-    virtual void GeneratePrimaries(G4Event*);
-    G4ParticleGun* GetParticleGun() {return fParticleGun;};
-
-  private:
-    G4ParticleGun*         fParticleGun;
-    DetectorConstruction*  fDetector;
-    G4double               fRndmBeam;
+    virtual void BeginOfEventAction(const G4Event*);
+    virtual void   EndOfEventAction(const G4Event*);
     
-    PrimaryGeneratorMessenger* fGunMessenger;     
+    void AddEnergy      (G4double edep)   {fEnergyDeposit  += edep;};
+    void AddTrakLenCharg(G4double length) {fTrakLenCharged += length;};
+    void AddTrakLenNeutr(G4double length) {fTrakLenNeutral += length;};
+    
+    void CountStepsCharg ()               {fNbStepsCharged++ ;};
+    void CountStepsNeutr ()               {fNbStepsNeutral++ ;};
+    
+    void SetTransmitFlag (G4int flag) 
+                           {if (flag > fTransmitFlag) fTransmitFlag = flag;};
+    void SetReflectFlag  (G4int flag) 
+                           {if (flag > fReflectFlag)   fReflectFlag = flag;};
+                                             
+        
+  private:
+    G4double fEnergyDeposit;
+    G4double fTrakLenCharged, fTrakLenNeutral;
+    G4int    fNbStepsCharged, fNbStepsNeutral;
+    G4int    fTransmitFlag,   fReflectFlag;        
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif
 
+    

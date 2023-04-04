@@ -23,47 +23,67 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file electromagnetic/TestEm5/include/PrimaryGeneratorAction.hh
-/// \brief Definition of the PrimaryGeneratorAction class
+/// \file electromagnetic/TestEm5/src/EventAction.cc
+/// \brief Implementation of the EventAction class
 //
 //
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#ifndef PrimaryGeneratorAction_h
-#define PrimaryGeneratorAction_h 1
+#include "EventAction.hh"
 
-#include "G4VUserPrimaryGeneratorAction.hh"
-#include "G4ParticleGun.hh"
-#include "globals.hh"
+#include "Run.hh"
+#include "HistoManager.hh"
 
-class G4Event;
-class DetectorConstruction;
-class PrimaryGeneratorMessenger;
+#include "G4RunManager.hh"
+#include "G4Event.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
+EventAction::EventAction()
+:G4UserEventAction(),
+ fEnergyDeposit(0.),
+ fTrakLenCharged(0.), fTrakLenNeutral(0.),
+ fNbStepsCharged(0), fNbStepsNeutral(0),
+ fTransmitFlag(0), fReflectFlag(0)
+{ }
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+EventAction::~EventAction()
+{ }
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void EventAction::BeginOfEventAction(const G4Event* )
 {
-  public:
-    PrimaryGeneratorAction(DetectorConstruction*);    
-   ~PrimaryGeneratorAction();
-
-  public:
-    void SetDefaultKinematic();
-    void SetRndmBeam(G4double val) {fRndmBeam = val;};   
-    virtual void GeneratePrimaries(G4Event*);
-    G4ParticleGun* GetParticleGun() {return fParticleGun;};
-
-  private:
-    G4ParticleGun*         fParticleGun;
-    DetectorConstruction*  fDetector;
-    G4double               fRndmBeam;
-    
-    PrimaryGeneratorMessenger* fGunMessenger;     
-};
+ // initialisation per event
+ fEnergyDeposit  = 0.;
+ fTrakLenCharged = fTrakLenNeutral = 0.; 
+ fNbStepsCharged = fNbStepsNeutral = 0;
+ fTransmitFlag   = fReflectFlag    = 0;    
+}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-#endif
+void EventAction::EndOfEventAction(const G4Event*)
+{
+  Run* run = static_cast<Run*>(
+             G4RunManager::GetRunManager()->GetNonConstCurrentRun());
+              
+ run->AddEnergy(fEnergyDeposit);
+ run->AddTrakLenCharg(fTrakLenCharged);
+ run->AddTrakLenNeutr(fTrakLenNeutral);
+
+ run->CountStepsCharg(fNbStepsCharged);
+ run->CountStepsNeutr(fNbStepsNeutral);
+
+ run->CountTransmit (fTransmitFlag);
+ run->CountReflect  (fReflectFlag);
+ 
+ if (fEnergyDeposit > 0.)
+    G4AnalysisManager::Instance()->FillH1(1,fEnergyDeposit);
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
