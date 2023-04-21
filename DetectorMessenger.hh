@@ -27,13 +27,15 @@ class DetectorMessenger: public G4UImessenger
 
     G4UIcmdWithAString*        fAbsMaterCmd;
     G4UIcmdWithADoubleAndUnit* fAbsThickCmd;
-    G4UIcmdWithADoubleAndUnit* fAbsSizYZCmd;
+    //G4UIcmdWithADoubleAndUnit* fAbsSizYZCmd;
+    G4UIcmdWithADoubleAndUnit* fAbsSizXYCmd;
 
     G4UIcmdWithADoubleAndUnit* fAbsXposCmd;
 
     G4UIcmdWithAString*        fWorldMaterCmd;
     G4UIcmdWithADoubleAndUnit* fWorldXCmd;
-    G4UIcmdWithADoubleAndUnit* fWorldYZCmd;
+    G4UIcmdWithADoubleAndUnit* fWorldYCmd;
+    G4UIcmdWithADoubleAndUnit* fWorldZCmd;
 
 };
 

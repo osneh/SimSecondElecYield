@@ -1,4 +1,4 @@
-# SimSecondElecYield
+# SimSecondElecYield NCP
 
 
 

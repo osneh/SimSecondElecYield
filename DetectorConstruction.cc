@@ -3,6 +3,7 @@
 
 #include "G4Material.hh"
 #include "G4Box.hh"
+#include "G4Tubs.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4UniformMagField.hh"
@@ -24,6 +25,13 @@
 
 #include "G4VisAttributes.hh"
 
+#include "G4SolidStore.hh"
+#include "G4AutoDelete.hh"
+#include "G4SDManager.hh"
+#include "F02ElectricFieldSetup.hh"
+#include "G4SystemOfUnits.hh"
+
+
 DetectorConstruction::DetectorConstruction()
  : G4VUserDetectorConstruction(),
    fAbsorberMaterial(nullptr),fWorldMaterial(nullptr),
@@ -33,18 +41,18 @@ DetectorConstruction::DetectorConstruction()
 {
    
    // default parameter values of the calorimeter
-   fAbsorberThickness = 10.*nm;
-   fAbsorberSizeYZ    = 300.*nm;
+   fAbsorberThickness = 400.*nm;
+   fAbsorberSizeXY    = 400.*nm;
    //fXposAbs           = 0.*nm;
-   fXposAbs           = 0.5*fAbsorberThickness;
+   fXposAbs           = 0.;//0.5*fAbsorberThickness;
    ComputeGeomParameters();
 
    // materials  
    DefineMaterials();
 
    SetWorldMaterial("G4_Galactic");
-   SetAbsorberMaterial("G4_ALUMINUM_OXIDE");
-
+   //SetAbsorberMaterial("G4_ALUMINUM_OXIDE");
+   SetAbsorberMaterial("G4_Cu");
   // create commands for interactive definition of the calorimeter  
   fDetectorMessenger = new DetectorMessenger(this);
 }
@@ -74,6 +82,8 @@ void DetectorConstruction::DefineMaterials()
   G4Element* O  = new G4Element("Oxygen",  symbol="O",  z= 8, a=  16.00*g/mole);
   G4Element* Na = new G4Element("Sodium",  symbol="Na", z=11, a=  22.99*g/mole);
   G4Element* I  = new G4Element("Iodine",  symbol="I" , z=53, a= 126.90*g/mole);
+  G4Element* S  = new G4Element("Sulfur", symbol = "S", z= 16, a = 32.065*g/mole);
+
 
   //
   // define simple materials
@@ -90,6 +100,7 @@ void DetectorConstruction::DefineMaterials()
   new G4Material("Tungsten", z=74, a=183.85*g/mole, density= 19.30*g/cm3);
   new G4Material("Gold",     z=79, a=196.97*g/mole, density= 19.32*g/cm3);
   new G4Material("Lead",     z=82, a=207.19*g/mole, density= 11.35*g/cm3);
+
 
   //
   // define a material from elements.   case 1: chemical molecule
@@ -108,6 +119,11 @@ void DetectorConstruction::DefineMaterials()
   NaI->AddElement(Na, natoms=1);
   NaI->AddElement(I , natoms=1);
   NaI->GetIonisation()->SetMeanExcitationEnergy(452*eV);
+
+  G4Material * P3HT = new G4Material("P3HT", density = 1.15*g/cm3, ncomponents=3);
+  P3HT->AddElement(H,natoms = 14);
+  P3HT->AddElement(O,natoms = 10);
+  P3HT->AddElement(S,natoms = 1);
 
   //
   // define a material from elements.   case 2: mixture by fractional mass
@@ -146,9 +162,10 @@ void DetectorConstruction::ComputeGeomParameters()
   fXendAbs   = fXposAbs+0.5*fAbsorberThickness;
 
   G4double xmax = std::max(std::abs(fXstartAbs), std::abs(fXendAbs));
-  fWorldSizeX = 2.4*xmax; 
+  fWorldSizeX = 1.2*xmax; 
   //fWorldSizeX = 1.2*xmax; 
-  fWorldSizeYZ= 1.2*fAbsorberSizeYZ;
+  fWorldSizeY= 1.2*fAbsorberSizeXY;
+  fWorldSizeZ= 1.2*fAbsorberSizeXY;
   if(nullptr != fPhysiWorld) { ChangeGeometry(); }
 }
 
@@ -159,7 +176,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   // World
   //
   fSolidWorld = new G4Box("World",                                //its name
-                   fWorldSizeX/2,fWorldSizeYZ/2,fWorldSizeYZ/2);  //its size
+                   fWorldSizeX/2,fWorldSizeY/2,fWorldSizeZ/2);  //its size
                          
   fLogicWorld = new G4LogicalVolume(fSolidWorld,          //its solid
                                    fWorldMaterial,        //its material
@@ -175,9 +192,14 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
     
   // Absorber
   // 
-  fSolidAbsorber = new G4Box("Absorber",        
-                      fAbsorberThickness/2,fAbsorberSizeYZ/2,fAbsorberSizeYZ/2);
-                          
+  //fSolidAbsorber = new G4Box("Absorber",        
+  //                    fAbsorberThickness/2,fAbsorberSizeYZ/2,fAbsorberSizeYZ/2);
+
+  fSolidAbsorber = new G4Tubs("Absorber",
+                              (fAbsorberSizeXY-350.*nm)/2,(fAbsorberSizeXY-250*nm)/2, fAbsorberThickness/2,
+                              0. , 
+                              360.*deg);
+
   fLogicAbsorber = new G4LogicalVolume(fSolidAbsorber,    //its solid
                                        fAbsorberMaterial, //its material
                                        "Absorber");       //its name
@@ -208,13 +230,13 @@ void DetectorConstruction::PrintGeomParameters()
 
   G4cout << "\n The  WORLD   is made of "  << G4BestUnit(fWorldSizeX,"Length")
          << " of " << fWorldMaterial->GetName();
-  G4cout << ". The transverse size (YZ) of the world is "
-         << G4BestUnit(fWorldSizeYZ,"Length") << G4endl;
+  G4cout << ". The transverse size (XZ) of the world is "
+         << G4BestUnit(fWorldSizeY,"Length") << G4endl;
   G4cout << " The ABSORBER is made of "
          <<G4BestUnit(fAbsorberThickness,"Length")
          << " of " << fAbsorberMaterial->GetName();
-  G4cout << ". The transverse size (YZ) is "
-         << G4BestUnit(fAbsorberSizeYZ,"Length") << G4endl;
+  G4cout << ". The transverse size (XY) is "
+         << G4BestUnit(fAbsorberSizeXY,"Length") << G4endl;
   G4cout << " X position of the middle of the absorber "
          << G4BestUnit(fXposAbs,"Length");
   G4cout << G4endl;
@@ -253,9 +275,9 @@ void DetectorConstruction::SetAbsorberThickness(G4double val)
   ComputeGeomParameters();
 }
 
-void DetectorConstruction::SetAbsorberSizeYZ(G4double val)
+void DetectorConstruction::SetAbsorberSizeXY(G4double val)
 {
-  fAbsorberSizeYZ = val;
+  fAbsorberSizeXY = val;
   ComputeGeomParameters();
 }
 
@@ -265,9 +287,15 @@ void DetectorConstruction::SetWorldSizeX(G4double val)
   ComputeGeomParameters();
 }
 
-void DetectorConstruction::SetWorldSizeYZ(G4double val)
+void DetectorConstruction::SetWorldSizeY(G4double val)
 {
-  fWorldSizeYZ = val;
+  fWorldSizeY = val;
+  ComputeGeomParameters();
+}
+
+void DetectorConstruction::SetWorldSizeZ(G4double val)
+{
+  fWorldSizeZ = val;
   ComputeGeomParameters();
 }
 
@@ -279,27 +307,39 @@ void DetectorConstruction::SetAbsorberXpos(G4double val)
 
 void DetectorConstruction::ConstructSDandField()
 {
-  if ( fFieldMessenger.Get() == 0 ) {
+  //if ( fFieldMessenger.Get() == 0 ) {
+  if ( !fEmFieldMessenger.Get()  ) {
+  
     // Create global magnetic field messenger.
     // Uniform magnetic field is then created automatically if
     // the field value is not zero.
-    G4ThreeVector fieldValue = G4ThreeVector();
-    G4GlobalMagFieldMessenger* msg =
-      new G4GlobalMagFieldMessenger(fieldValue);
+    //G4ThreeVector fieldValue = G4ThreeVector();
+    //G4GlobalMagFieldMessenger* msg =
+    //  new G4GlobalMagFieldMessenger(fieldValue);
     //msg->SetVerboseLevel(1);
-    G4AutoDelete::Register(msg);
-    fFieldMessenger.Put( msg );        
+    //G4AutoDelete::Register(msg);
+    //:0fFieldMessenger.Put( msg );      
+
+    F02ElectricFieldSetup* fieldSetup = new F02ElectricFieldSetup();
+    G4AutoDelete::Register(fieldSetup); //Kernel will delete the messenger
+    fEmFieldSetup.Put(fieldSetup);
+
   }
 }
 
 void DetectorConstruction::ChangeGeometry()
 {
   fSolidWorld->SetXHalfLength(fWorldSizeX*0.5);
-  fSolidWorld->SetYHalfLength(fWorldSizeYZ*0.5);
-  fSolidWorld->SetZHalfLength(fWorldSizeYZ*0.5);
+  fSolidWorld->SetYHalfLength(fWorldSizeY*0.5);
+  fSolidWorld->SetZHalfLength(fWorldSizeZ*0.5);
 
-  fSolidAbsorber->SetXHalfLength(fAbsorberThickness*0.5);
-  fSolidAbsorber->SetYHalfLength(fAbsorberSizeYZ*0.5);
-  fSolidAbsorber->SetZHalfLength(fAbsorberSizeYZ*0.5);
+  //fSolidAbsorber->SetXHalfLength(fAbsorberThickness*0.5);
+  //fSolidAbsorber->SetYHalfLength(fAbsorberSizeYZ*0.5);
+  //fSolidAbsorber->SetZHalfLength(fAbsorberSizeYZ*0.5);
+
+
+  //fSolidAbsorber->SetXHalfLength(fAbsorberThickness*0.5);
+  //fSolidAbsorber->SetYHalfLength(fAbsorberThickness*0.5);
+  fSolidAbsorber->SetZHalfLength(fAbsorberThickness*0.5);
 }
 

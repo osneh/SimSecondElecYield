@@ -14,11 +14,12 @@ DetectorMessenger::DetectorMessenger(DetectorConstruction * Det)
  fDetDir(0),
  fAbsMaterCmd(0),
  fAbsThickCmd(0),
- fAbsSizYZCmd(0),
+ fAbsSizXYCmd(0),
  fAbsXposCmd(0),
  fWorldMaterCmd(0),
  fWorldXCmd(0),
- fWorldYZCmd(0)
+ fWorldYCmd(0),
+ fWorldZCmd(0)
 { 
   fTestemDir = new G4UIdirectory("/testem/");
   fTestemDir->SetGuidance("UI commands specific to this example.");
@@ -46,13 +47,13 @@ DetectorMessenger::DetectorMessenger(DetectorConstruction * Det)
   fAbsThickCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
   fAbsThickCmd->SetToBeBroadcasted(false);
   
-  fAbsSizYZCmd = new G4UIcmdWithADoubleAndUnit("/testem/det/setAbsYZ",this);
-  fAbsSizYZCmd->SetGuidance("Set sizeYZ of the Absorber");
-  fAbsSizYZCmd->SetParameterName("SizeYZ",false);
-  fAbsSizYZCmd->SetRange("SizeYZ>0.");
-  fAbsSizYZCmd->SetUnitCategory("Length");
-  fAbsSizYZCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
-  fAbsSizYZCmd->SetToBeBroadcasted(false);
+  fAbsSizXYCmd = new G4UIcmdWithADoubleAndUnit("/testem/det/setAbsXY",this);
+  fAbsSizXYCmd->SetGuidance("Set sizeXY of the Absorber");
+  fAbsSizXYCmd->SetParameterName("SizeXY",false);
+  fAbsSizXYCmd->SetRange("SizeXY>0.");
+  fAbsSizXYCmd->SetUnitCategory("Length");
+  fAbsSizXYCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  fAbsSizXYCmd->SetToBeBroadcasted(false);
   
   fAbsXposCmd = new G4UIcmdWithADoubleAndUnit("/testem/det/setAbsXpos",this);
   fAbsXposCmd->SetGuidance("Set X pos. of the Absorber");
@@ -69,13 +70,21 @@ DetectorMessenger::DetectorMessenger(DetectorConstruction * Det)
   fWorldXCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
   fWorldXCmd->SetToBeBroadcasted(false);
   
-  fWorldYZCmd = new G4UIcmdWithADoubleAndUnit("/testem/det/setWorldYZ",this);
-  fWorldYZCmd->SetGuidance("Set sizeYZ of the World");
-  fWorldYZCmd->SetParameterName("WSizeYZ",false);
-  fWorldYZCmd->SetRange("WSizeYZ>0.");
-  fWorldYZCmd->SetUnitCategory("Length");
-  fWorldYZCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
-  fWorldYZCmd->SetToBeBroadcasted(false);
+  fWorldYCmd = new G4UIcmdWithADoubleAndUnit("/testem/det/setWorldY",this);
+  fWorldYCmd->SetGuidance("Set sizeY of the World");
+  fWorldYCmd->SetParameterName("WSizeY",false);
+  fWorldYCmd->SetRange("WSizeY>0.");
+  fWorldYCmd->SetUnitCategory("Length");
+  fWorldYCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  fWorldYCmd->SetToBeBroadcasted(false);
+
+  fWorldZCmd = new G4UIcmdWithADoubleAndUnit("/testem/det/setWorldZ",this);
+  fWorldZCmd->SetGuidance("Set sizeZ of the World");
+  fWorldZCmd->SetParameterName("WSizeZ",false);
+  fWorldZCmd->SetRange("WSizeZ>0.");
+  fWorldZCmd->SetUnitCategory("Length");
+  fWorldZCmd->AvailableForStates(G4State_PreInit,G4State_Idle);
+  fWorldZCmd->SetToBeBroadcasted(false);
 
 }
 
@@ -83,11 +92,12 @@ DetectorMessenger::~DetectorMessenger()
 {
   delete fAbsMaterCmd; 
   delete fAbsThickCmd; 
-  delete fAbsSizYZCmd;  
+  delete fAbsSizXYCmd;  
   delete fAbsXposCmd; 
   delete fWorldMaterCmd;
   delete fWorldXCmd;
-  delete fWorldYZCmd;
+  delete fWorldYCmd;
+  delete fWorldZCmd;
   delete fDetDir;  
   delete fTestemDir;
 }
@@ -103,8 +113,8 @@ void DetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
   if ( command == fAbsThickCmd )
   {fDetector->SetAbsorberThickness(fAbsThickCmd->GetNewDoubleValue(newValue));}
    
-  if ( command == fAbsSizYZCmd )
-   {fDetector->SetAbsorberSizeYZ(fAbsSizYZCmd->GetNewDoubleValue(newValue));}
+  if ( command == fAbsSizXYCmd )
+   {fDetector->SetAbsorberSizeXY(fAbsSizXYCmd->GetNewDoubleValue(newValue));}
    
   if ( command == fAbsXposCmd )
    {fDetector->SetAbsorberXpos(fAbsXposCmd->GetNewDoubleValue(newValue));}
@@ -112,7 +122,10 @@ void DetectorMessenger::SetNewValue(G4UIcommand* command,G4String newValue)
   if ( command == fWorldXCmd )
    {fDetector->SetWorldSizeX(fWorldXCmd->GetNewDoubleValue(newValue));}
    
-  if ( command == fWorldYZCmd )
-   {fDetector->SetWorldSizeYZ(fWorldYZCmd->GetNewDoubleValue(newValue));}
+  if ( command == fWorldYCmd )
+   {fDetector->SetWorldSizeY(fWorldYCmd->GetNewDoubleValue(newValue));}
+
+  if ( command == fWorldZCmd )
+   {fDetector->SetWorldSizeZ(fWorldZCmd->GetNewDoubleValue(newValue));}
    
 }

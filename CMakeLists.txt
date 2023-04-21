@@ -1,6 +1,6 @@
 # Setup the project
 cmake_minimum_required(VERSION 3.16...3.21 FATAL_ERROR)
-project(SimSecondElecYield)
+project(SimSecondElecYield_NCP)
 
 # find GEANT4
 find_package(Geant4 REQUIRED ui_all vis_all)

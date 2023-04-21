@@ -73,13 +73,16 @@ void PrimaryGeneratorAction::SetDefaultKinematic()
   G4ParticleDefinition* particle
                     = particleTable->FindParticle("e-");
   fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
+  //fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
   //fParticleGun->SetParticleEnergy(30.*MeV);
   //fParticleGun->SetParticleEnergy(300.*eV);
   //fParticleGun->SetParticleEnergy(600.*eV);
   fParticleGun->SetParticleEnergy(250.*eV);
-  G4double x0 = -0.5*(fDetector->GetWorldSizeX());
-  fParticleGun->SetParticlePosition(G4ThreeVector(x0, 0.0, 0.0));  
+  //G4double x0 = -0.5*(fDetector->GetWorldSizeX());
+  //fParticleGun->SetParticlePosition(G4ThreeVector(x0, 0.0, 0.0));  
+  G4double z0 = -0.5*(fDetector->GetWorldSizeZ());
+  fParticleGun->SetParticlePosition(G4ThreeVector(0.0, 0.0, z0));  
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -87,8 +90,10 @@ void PrimaryGeneratorAction::SetDefaultKinematic()
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
   if(0 == anEvent->GetEventID()) {
-    G4double x0 = -0.5*(fDetector->GetWorldSizeX());
-    fParticleGun->SetParticlePosition(G4ThreeVector(x0, 0.0, 0.0));  
+    //G4double x0 = -0.5*(fDetector->GetWorldSizeX());
+    //fParticleGun->SetParticlePosition(G4ThreeVector(x0, 0.0, 0.0));  
+    G4double z0 = -0.5*(fDetector->GetWorldSizeZ());
+    fParticleGun->SetParticlePosition(G4ThreeVector(0.0, 0.0,z0)); 
   }
   //this function is called at the begining of event
   //
@@ -96,7 +101,7 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   if (fRndmBeam > 0.) 
     {
       G4ThreeVector oldPosition = fParticleGun->GetParticlePosition();    
-      G4double rbeam = 0.5*(fDetector->GetAbsorberSizeYZ())*fRndmBeam;
+      G4double rbeam = 0.5*(fDetector->GetAbsorberSizeXY())*fRndmBeam;
       G4double x0 = oldPosition.x();
       G4double y0 = (2*G4UniformRand()-1.)*rbeam;
       G4double z0 = (2*G4UniformRand()-1.)*rbeam;
