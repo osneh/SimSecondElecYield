@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/simSEY.dir/Run.cc.o.d"
   "CMakeFiles/simSEY.dir/RunAction.cc.o"
   "CMakeFiles/simSEY.dir/RunAction.cc.o.d"
+  "CMakeFiles/simSEY.dir/SensitiveDetector.cc.o"
+  "CMakeFiles/simSEY.dir/SensitiveDetector.cc.o.d"
   "CMakeFiles/simSEY.dir/StackingAction.cc.o"
   "CMakeFiles/simSEY.dir/StackingAction.cc.o.d"
   "CMakeFiles/simSEY.dir/StackingMessenger.cc.o"

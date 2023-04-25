@@ -6,6 +6,8 @@
 #include "globals.hh"
 #include "G4Cache.hh"
 
+#include "SensitiveDetector.hh"
+
 class G4Box;
 class G4Tubs;
 class G4VPhysicalVolume;
@@ -83,6 +85,9 @@ private:
   G4Box*             fSolidWorld;
   G4LogicalVolume*   fLogicWorld;
   G4VPhysicalVolume* fPhysiWorld;
+
+  G4LogicalVolume*   fLogicDetector;  // Sensitive Detector 
+  G4LogicalVolume*   fLogicDetectorTop;  // Sensitive Detector TOP
 
   //G4Box*             fSolidAbsorber;
   G4Tubs*             fSolidAbsorber;

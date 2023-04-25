@@ -279,10 +279,24 @@ CMakeFiles/simSEY.dir/RunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simSEY.dir/RunAction.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/habreu/WORK/simsecondelecyield_NCP/RunAction.cc -o CMakeFiles/simSEY.dir/RunAction.cc.s
 
+CMakeFiles/simSEY.dir/SensitiveDetector.cc.o: CMakeFiles/simSEY.dir/flags.make
+CMakeFiles/simSEY.dir/SensitiveDetector.cc.o: ../SensitiveDetector.cc
+CMakeFiles/simSEY.dir/SensitiveDetector.cc.o: CMakeFiles/simSEY.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/simSEY.dir/SensitiveDetector.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simSEY.dir/SensitiveDetector.cc.o -MF CMakeFiles/simSEY.dir/SensitiveDetector.cc.o.d -o CMakeFiles/simSEY.dir/SensitiveDetector.cc.o -c /home/habreu/WORK/simsecondelecyield_NCP/SensitiveDetector.cc
+
+CMakeFiles/simSEY.dir/SensitiveDetector.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simSEY.dir/SensitiveDetector.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/habreu/WORK/simsecondelecyield_NCP/SensitiveDetector.cc > CMakeFiles/simSEY.dir/SensitiveDetector.cc.i
+
+CMakeFiles/simSEY.dir/SensitiveDetector.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simSEY.dir/SensitiveDetector.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/habreu/WORK/simsecondelecyield_NCP/SensitiveDetector.cc -o CMakeFiles/simSEY.dir/SensitiveDetector.cc.s
+
 CMakeFiles/simSEY.dir/StackingAction.cc.o: CMakeFiles/simSEY.dir/flags.make
 CMakeFiles/simSEY.dir/StackingAction.cc.o: ../StackingAction.cc
 CMakeFiles/simSEY.dir/StackingAction.cc.o: CMakeFiles/simSEY.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/simSEY.dir/StackingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/simSEY.dir/StackingAction.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simSEY.dir/StackingAction.cc.o -MF CMakeFiles/simSEY.dir/StackingAction.cc.o.d -o CMakeFiles/simSEY.dir/StackingAction.cc.o -c /home/habreu/WORK/simsecondelecyield_NCP/StackingAction.cc
 
 CMakeFiles/simSEY.dir/StackingAction.cc.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/simSEY.dir/StackingAction.cc.s: cmake_force
 CMakeFiles/simSEY.dir/StackingMessenger.cc.o: CMakeFiles/simSEY.dir/flags.make
 CMakeFiles/simSEY.dir/StackingMessenger.cc.o: ../StackingMessenger.cc
 CMakeFiles/simSEY.dir/StackingMessenger.cc.o: CMakeFiles/simSEY.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/simSEY.dir/StackingMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/simSEY.dir/StackingMessenger.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simSEY.dir/StackingMessenger.cc.o -MF CMakeFiles/simSEY.dir/StackingMessenger.cc.o.d -o CMakeFiles/simSEY.dir/StackingMessenger.cc.o -c /home/habreu/WORK/simsecondelecyield_NCP/StackingMessenger.cc
 
 CMakeFiles/simSEY.dir/StackingMessenger.cc.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/simSEY.dir/StackingMessenger.cc.s: cmake_force
 CMakeFiles/simSEY.dir/StepMax.cc.o: CMakeFiles/simSEY.dir/flags.make
 CMakeFiles/simSEY.dir/StepMax.cc.o: ../StepMax.cc
 CMakeFiles/simSEY.dir/StepMax.cc.o: CMakeFiles/simSEY.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/simSEY.dir/StepMax.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/simSEY.dir/StepMax.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simSEY.dir/StepMax.cc.o -MF CMakeFiles/simSEY.dir/StepMax.cc.o.d -o CMakeFiles/simSEY.dir/StepMax.cc.o -c /home/habreu/WORK/simsecondelecyield_NCP/StepMax.cc
 
 CMakeFiles/simSEY.dir/StepMax.cc.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/simSEY.dir/StepMax.cc.s: cmake_force
 CMakeFiles/simSEY.dir/StepMaxMessenger.cc.o: CMakeFiles/simSEY.dir/flags.make
 CMakeFiles/simSEY.dir/StepMaxMessenger.cc.o: ../StepMaxMessenger.cc
 CMakeFiles/simSEY.dir/StepMaxMessenger.cc.o: CMakeFiles/simSEY.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/simSEY.dir/StepMaxMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/simSEY.dir/StepMaxMessenger.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simSEY.dir/StepMaxMessenger.cc.o -MF CMakeFiles/simSEY.dir/StepMaxMessenger.cc.o.d -o CMakeFiles/simSEY.dir/StepMaxMessenger.cc.o -c /home/habreu/WORK/simsecondelecyield_NCP/StepMaxMessenger.cc
 
 CMakeFiles/simSEY.dir/StepMaxMessenger.cc.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/simSEY.dir/StepMaxMessenger.cc.s: cmake_force
 CMakeFiles/simSEY.dir/SteppingAction.cc.o: CMakeFiles/simSEY.dir/flags.make
 CMakeFiles/simSEY.dir/SteppingAction.cc.o: ../SteppingAction.cc
 CMakeFiles/simSEY.dir/SteppingAction.cc.o: CMakeFiles/simSEY.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/simSEY.dir/SteppingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/simSEY.dir/SteppingAction.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simSEY.dir/SteppingAction.cc.o -MF CMakeFiles/simSEY.dir/SteppingAction.cc.o.d -o CMakeFiles/simSEY.dir/SteppingAction.cc.o -c /home/habreu/WORK/simsecondelecyield_NCP/SteppingAction.cc
 
 CMakeFiles/simSEY.dir/SteppingAction.cc.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/simSEY.dir/SteppingAction.cc.s: cmake_force
 CMakeFiles/simSEY.dir/TrackingAction.cc.o: CMakeFiles/simSEY.dir/flags.make
 CMakeFiles/simSEY.dir/TrackingAction.cc.o: ../TrackingAction.cc
 CMakeFiles/simSEY.dir/TrackingAction.cc.o: CMakeFiles/simSEY.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/simSEY.dir/TrackingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/simSEY.dir/TrackingAction.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simSEY.dir/TrackingAction.cc.o -MF CMakeFiles/simSEY.dir/TrackingAction.cc.o.d -o CMakeFiles/simSEY.dir/TrackingAction.cc.o -c /home/habreu/WORK/simsecondelecyield_NCP/TrackingAction.cc
 
 CMakeFiles/simSEY.dir/TrackingAction.cc.i: cmake_force
@@ -380,6 +394,7 @@ simSEY_OBJECTS = \
 "CMakeFiles/simSEY.dir/PrimaryGeneratorMessenger.cc.o" \
 "CMakeFiles/simSEY.dir/Run.cc.o" \
 "CMakeFiles/simSEY.dir/RunAction.cc.o" \
+"CMakeFiles/simSEY.dir/SensitiveDetector.cc.o" \
 "CMakeFiles/simSEY.dir/StackingAction.cc.o" \
 "CMakeFiles/simSEY.dir/StackingMessenger.cc.o" \
 "CMakeFiles/simSEY.dir/StepMax.cc.o" \
@@ -405,6 +420,7 @@ simSEY: CMakeFiles/simSEY.dir/PrimaryGeneratorAction.cc.o
 simSEY: CMakeFiles/simSEY.dir/PrimaryGeneratorMessenger.cc.o
 simSEY: CMakeFiles/simSEY.dir/Run.cc.o
 simSEY: CMakeFiles/simSEY.dir/RunAction.cc.o
+simSEY: CMakeFiles/simSEY.dir/SensitiveDetector.cc.o
 simSEY: CMakeFiles/simSEY.dir/StackingAction.cc.o
 simSEY: CMakeFiles/simSEY.dir/StackingMessenger.cc.o
 simSEY: CMakeFiles/simSEY.dir/StepMax.cc.o
@@ -455,7 +471,7 @@ simSEY: /home/habreu/WORK/geant4-v11.0.3-install/lib64/libG4global.so
 simSEY: /home/habreu/WORK/geant4-v11.0.3-install/lib64/libG4clhep.so
 simSEY: /home/habreu/WORK/geant4-v11.0.3-install/lib64/libG4ptl.so.0.0.2
 simSEY: CMakeFiles/simSEY.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable simSEY"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/habreu/WORK/simsecondelecyield_NCP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable simSEY"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simSEY.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

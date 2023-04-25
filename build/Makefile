@@ -478,6 +478,30 @@ RunAction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simSEY.dir/build.make CMakeFiles/simSEY.dir/RunAction.cc.s
 .PHONY : RunAction.cc.s
 
+SensitiveDetector.o: SensitiveDetector.cc.o
+.PHONY : SensitiveDetector.o
+
+# target to build an object file
+SensitiveDetector.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simSEY.dir/build.make CMakeFiles/simSEY.dir/SensitiveDetector.cc.o
+.PHONY : SensitiveDetector.cc.o
+
+SensitiveDetector.i: SensitiveDetector.cc.i
+.PHONY : SensitiveDetector.i
+
+# target to preprocess a source file
+SensitiveDetector.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simSEY.dir/build.make CMakeFiles/simSEY.dir/SensitiveDetector.cc.i
+.PHONY : SensitiveDetector.cc.i
+
+SensitiveDetector.s: SensitiveDetector.cc.s
+.PHONY : SensitiveDetector.s
+
+# target to generate assembly for a file
+SensitiveDetector.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simSEY.dir/build.make CMakeFiles/simSEY.dir/SensitiveDetector.cc.s
+.PHONY : SensitiveDetector.cc.s
+
 StackingAction.o: StackingAction.cc.o
 .PHONY : StackingAction.o
 
@@ -698,6 +722,9 @@ help:
 	@echo "... RunAction.o"
 	@echo "... RunAction.i"
 	@echo "... RunAction.s"
+	@echo "... SensitiveDetector.o"
+	@echo "... SensitiveDetector.i"
+	@echo "... SensitiveDetector.s"
 	@echo "... StackingAction.o"
 	@echo "... StackingAction.i"
 	@echo "... StackingAction.s"

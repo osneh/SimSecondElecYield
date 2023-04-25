@@ -234,6 +234,106 @@ CMakeFiles/simSEY.dir/SteppingAction.cc.o: \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4LogicalVolume.icc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Cache.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4CacheDetails.hh \
+ /home/habreu/WORK/simsecondelecyield_NCP/SensitiveDetector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VHit.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4THitsCollection.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VHitsCollection.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Allocator.hh \
+ /usr/include/c++/8/cstddef \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AllocatorPool.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Allocator.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ThreeVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSensitiveDetector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VHit.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Step.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4StepPoint.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SteppingControl.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4StepStatus.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TouchableHandle.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VTouchable.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VTouchable.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ReferenceCountedHandle.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Material.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Element.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Isotope.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4IonisParamElm.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4IsotopeVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ElementTable.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ElementVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MaterialPropertiesTable.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MaterialPropertiesIndex.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MaterialPropertyVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsFreeVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsVector.hh \
+ /usr/include/c++/8/fstream \
+ /usr/include/c++/8/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/8/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/8/bits/fstream.tcc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Log.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsVectorType.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsVector.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4IonisParamMat.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Exp.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SandiaTable.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4OrderedTable.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DataVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DataVector.icc \
+ /usr/include/assert.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MaterialTable.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4LogicalVolume.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4StepPoint.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TrackVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Profiler.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Profiler.icc \
+ /usr/include/c++/8/functional /usr/include/c++/8/unordered_map \
+ /usr/include/c++/8/bits/hashtable.h \
+ /usr/include/c++/8/bits/hashtable_policy.h \
+ /usr/include/c++/8/bits/unordered_map.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/PTL/Globals.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/PTL/Types.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/PTL/Utility.hh \
+ /usr/include/c++/8/set /usr/include/c++/8/bits/stl_set.h \
+ /usr/include/c++/8/bits/stl_multiset.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Step.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Track.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/trkdefs.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DynamicParticle.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ParticleDefinition.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PDefManager.hh \
+ /usr/include/c++/8/stdlib.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/pwdefs.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ParticleDefinition.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4LorentzVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ParticleMomentum.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ElectronOccupancy.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DynamicParticle.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TrackStatus.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VUserTrackInformation.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsModelCatalog.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Track.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4HCofThisEvent.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VReadOutGeometry.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SensitiveVolumeList.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TouchableHistory.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NavigationHistory.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AffineTransform.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Transform3D.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Geometry/Point3D.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AffineTransform.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NavigationLevel.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NavigationLevelRep.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NavigationLevelRep.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NavigationLevel.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NavigationHistoryPool.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NavigationHistory.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TouchableHistory.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4CollectionNameVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSDFilter.hh \
  /home/habreu/WORK/simsecondelecyield_NCP/RunAction.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UserRunAction.hh \
  /home/habreu/WORK/simsecondelecyield_NCP/EventAction.hh \
@@ -245,10 +345,6 @@ CMakeFiles/simSEY.dir/SteppingAction.cc.o: \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VAnalysisManager.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AnalysisManagerState.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AnalysisVerbose.hh \
- /usr/include/c++/8/fstream \
- /usr/include/c++/8/x86_64-redhat-linux/bits/basic_file.h \
- /usr/include/c++/8/x86_64-redhat-linux/bits/c++io.h \
- /usr/include/c++/8/bits/fstream.tcc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VAnalysisManager.icc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4HnManager.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4BaseAnalysisManager.hh \
@@ -309,71 +405,6 @@ CMakeFiles/simSEY.dir/SteppingAction.cc.o: \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GenericAnalysisManager.icc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GenericFileManager.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GenericFileManager.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Step.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4StepPoint.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Allocator.hh \
- /usr/include/c++/8/cstddef \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AllocatorPool.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SteppingControl.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4StepStatus.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TouchableHandle.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VTouchable.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VTouchable.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ReferenceCountedHandle.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Material.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Element.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Isotope.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4IonisParamElm.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4IsotopeVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ElementTable.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ElementVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MaterialPropertiesTable.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MaterialPropertiesIndex.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MaterialPropertyVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsFreeVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Log.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsVectorType.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsVector.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4IonisParamMat.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Exp.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SandiaTable.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4OrderedTable.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DataVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DataVector.icc \
- /usr/include/assert.h \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MaterialTable.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4LogicalVolume.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4StepPoint.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TrackVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Profiler.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Profiler.icc \
- /usr/include/c++/8/functional /usr/include/c++/8/unordered_map \
- /usr/include/c++/8/bits/hashtable.h \
- /usr/include/c++/8/bits/hashtable_policy.h \
- /usr/include/c++/8/bits/unordered_map.h \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/PTL/Globals.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/PTL/Types.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/PTL/Utility.hh \
- /usr/include/c++/8/set /usr/include/c++/8/bits/stl_set.h \
- /usr/include/c++/8/bits/stl_multiset.h \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Step.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Track.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/trkdefs.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DynamicParticle.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ParticleDefinition.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PDefManager.hh \
- /usr/include/c++/8/stdlib.h \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/pwdefs.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ParticleDefinition.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4LorentzVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ParticleMomentum.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ElectronOccupancy.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DynamicParticle.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TrackStatus.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VUserTrackInformation.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicsModelCatalog.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Track.icc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Step.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UnitsTable.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UnitsTable.icc

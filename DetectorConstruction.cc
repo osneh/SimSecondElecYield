@@ -218,6 +218,41 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   G4VisAttributes* Target_vis = new G4VisAttributes(G4Colour::Yellow());
   fLogicAbsorber->SetVisAttributes(Target_vis);
 
+  // ///////////////////////////////////////////// //
+  //  Sensitive detectors at the end of the NCPs   //
+  // ///////////////////////////////////////////// //
+  G4Box *fSolidDetector  = new G4Box("solidDetector", 0.5*nanometer, 0.5*nanometer, 0.5*nanometer);
+  fLogicDetector = new G4LogicalVolume(fSolidDetector,fWorldMaterial,"logicDetector");
+
+  G4int num = 50;
+
+  for (G4int i = 0 ; i < num; i++)
+   {
+      for (G4int j = 0 ; j < num; j++)
+      {
+        //char c = j+i*num;
+        G4VPhysicalVolume *fPhysiDetector = new G4PVPlacement(0,
+                                            G4ThreeVector( (-num/2 + i)*nanometer,(-num/2 + j)*nanometer,
+                                            (fAbsorberThickness+40*nanometer)/2),
+                                            //fLogicDetector, "physDetector",fLogicWorld, false, j+i*num, true);
+                                            fLogicDetector, "physDetector",fLogicWorld, false, j+i*num, true);
+      }
+
+      //}
+  }
+
+  // ---- 
+  G4Tubs *fSolidDetectorTop  = new G4Tubs("solidDetectorTop", 0., (fAbsorberSizeXY-349*nm)/2, 0.001*nm,0., 360.*deg);
+  fLogicDetectorTop = new G4LogicalVolume(fSolidDetectorTop,fWorldMaterial,"logicDetectorTop");
+  G4VPhysicalVolume *fPhysiDetectorTop = new G4PVPlacement(0,
+                      G4ThreeVector(0,0,(-1*fAbsorberThickness/2)),
+                      fLogicDetectorTop, "physDetectorTop",fLogicWorld, false,true);
+
+
+
+
+
+
   //always return the physical World
   return fPhysiWorld;
 
@@ -307,6 +342,16 @@ void DetectorConstruction::SetAbsorberXpos(G4double val)
 
 void DetectorConstruction::ConstructSDandField()
 {
+  
+ 
+  SensitiveDetector * sensDetTop = new SensitiveDetector("SensitiveDetectorTop");
+  fLogicDetectorTop->SetSensitiveDetector(sensDetTop);
+  
+  
+
+  SensitiveDetector * sensDet = new SensitiveDetector("SensitiveDetector");
+  fLogicDetector->SetSensitiveDetector(sensDet);
+
   //if ( fFieldMessenger.Get() == 0 ) {
   if ( !fEmFieldMessenger.Get()  ) {
   

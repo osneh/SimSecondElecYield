@@ -501,6 +501,17 @@ CMakeFiles/simSEY.dir/simSEY.cc.o: \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/globals.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Cache.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4CacheDetails.hh \
+ /home/habreu/WORK/simsecondelecyield_NCP/SensitiveDetector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VHit.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4THitsCollection.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Allocator.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ThreeVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSensitiveDetector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VHit.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VReadOutGeometry.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SensitiveVolumeList.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4CollectionNameVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSDFilter.hh \
  /home/habreu/WORK/simsecondelecyield_NCP/PhysicsList.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VModularPhysicsList.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VPhysicsConstructor.hh \
@@ -591,7 +602,6 @@ CMakeFiles/simSEY.dir/simSEY.cc.o: \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4HitFilterFactories.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VFilter.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VModelFactory.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VHit.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4DigiFilterFactories.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VDigi.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TrajectoryFilterFactories.hh \

@@ -82,7 +82,8 @@ F02ElectricFieldSetup::F02ElectricFieldSetup()
 {
   fEMfield = new G4UniformElectricField(
                    //G4ThreeVector(0.0,1.0*kilovolt/cm,0.0));
-                   G4ThreeVector(0.,0.,1.0*kilovolt/cm));
+                   G4ThreeVector(0.,0.,-1*kilovolt/micrometer));
+                   //G4ThreeVector(0.,0.,0.));
   fEquation = new G4EqMagElectricField(fEMfield);
 
   fFieldManager = GetGlobalFieldManager();
@@ -94,7 +95,8 @@ F02ElectricFieldSetup::F02ElectricFieldSetup()
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 F02ElectricFieldSetup::F02ElectricFieldSetup(G4ThreeVector fieldVector)
-  : fMinStep(0.010*mm),  // minimal step of 10 microns
+  //: fMinStep(0.010*mm),  // minimal step of 10 microns
+  : fMinStep(1*nanometer),  // minimal step of 10 microns
     fFieldManager(0),
     fChordFinder(0),
     fEquation(0),

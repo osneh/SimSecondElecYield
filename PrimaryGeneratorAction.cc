@@ -74,7 +74,7 @@ void PrimaryGeneratorAction::SetDefaultKinematic()
                     = particleTable->FindParticle("e-");
   fParticleGun->SetParticleDefinition(particle);
   //fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.1,0.,1.));
   //fParticleGun->SetParticleEnergy(30.*MeV);
   //fParticleGun->SetParticleEnergy(300.*eV);
   //fParticleGun->SetParticleEnergy(600.*eV);
