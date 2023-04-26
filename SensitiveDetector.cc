@@ -50,6 +50,8 @@
 //#include	"G4VHit.hh"
 //#include	"G4AttDef.hh"
 //#include "Analysis.hh"
+#include "G4SystemOfUnits.hh"
+
 
 
 
@@ -88,7 +90,7 @@ G4bool SensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROhits)
 
     G4ThreeVector posElectron = preStepPoint->GetPosition();
 
-    G4cout << " -->> Electron Position : " << posElectron << G4endl;
+    //G4cout << " -->> Electron Position : " << posElectron << G4endl;
 
 	const G4VTouchable *touchable = aStep->GetPreStepPoint()->GetTouchable();
 
@@ -100,8 +102,29 @@ G4bool SensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROhits)
 
 	G4cout << " -->> Detector position:" << posDetector << G4endl;
 	G4double hitTime = preStepPoint->GetGlobalTime(); 
-	G4cout << " -->> Time:" << hitTime << G4endl;
+	//G4cout << " -->> Time:" << hitTime << G4endl;
 
+	G4double energy = aTrack->GetKineticEnergy();
+
+
+
+	G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
+
+	G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+    G4cout << " -->> Detector position:" << posDetector << G4endl;
+	G4cout<< " -->>TEST pos 0,1,2  : " << posDetector[0]<<","<<posDetector[1]<<","<<posDetector[2] << G4endl;
+	G4cout << " -->> Energy:" << energy << G4endl;
+	G4cout << " -->> EVENT:" << evt  << G4endl;
+	// //////////////////////////////// // 
+	//    		Filling Ntuple 			//
+	// //////////////////////////////// // 
+	analysisManager->FillNtupleIColumn(0,evt);
+	analysisManager->FillNtupleDColumn(1,posDetector[0]/nm);
+	analysisManager->FillNtupleDColumn(2,posDetector[1]/nm);
+	analysisManager->FillNtupleDColumn(3,posDetector[2]/nm);
+	analysisManager->FillNtupleDColumn(4,energy/eV );
+	analysisManager->FillNtupleDColumn(5,hitTime);
+	analysisManager->AddNtupleRow(0);
 	/*
 	G4String processName;
 	const G4VProcess* creatorProcess = aStep->GetTrack()->GetCreatorProcess();

@@ -88,6 +88,15 @@ void RunAction::BeginOfRunAction(const G4Run*)
   G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   if ( analysisManager->IsActive() ) {
     analysisManager->OpenFile();
+
+    analysisManager->CreateNtuple("Hits","Hits");
+    analysisManager->CreateNtupleIColumn("fEvent");
+    analysisManager->CreateNtupleDColumn("fX"); 
+    analysisManager->CreateNtupleDColumn("fY"); 
+    analysisManager->CreateNtupleDColumn("fZ"); 
+    analysisManager->CreateNtupleDColumn("fKineticEnergy");
+    analysisManager->CreateNtupleDColumn("fTime");
+    analysisManager->FinishNtuple(0);
   } 
 }
 

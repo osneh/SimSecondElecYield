@@ -81,8 +81,9 @@ void EventAction::EndOfEventAction(const G4Event*)
  run->CountTransmit (fTransmitFlag);
  run->CountReflect  (fReflectFlag);
  
- if (fEnergyDeposit > 0.)
-    G4AnalysisManager::Instance()->FillH1(1,fEnergyDeposit);
+ //if (fEnergyDeposit > 0.)
+ //   G4AnalysisManager::Instance()->FillH1(1,fEnergyDeposit);
+    G4AnalysisManager::Instance()->FillH1(1,0.);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

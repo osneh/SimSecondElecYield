@@ -33,9 +33,11 @@
 #
 # Specify view angle:
 #/vis/viewer/set/style surface
-/vis/geometry/set/colour Absorber 0 0 0 1 .3
-/vis/viewer/set/viewpointVector -1 0 0
-/vis/viewer/set/viewpointThetaPhi -0
+#/vis/geometry/set/visibility World ! false
+/vis/geometry/set/colour Absorber 1 0 0 1 1
+/vis/viewer/set/viewpointVector 1 0 0
+/vis/viewer/set/viewpointThetaPhi -33
+/vis/scene/add/electricField
 #
 # Specify zoom value:
 #/vis/viewer/zoom 1.4
@@ -44,7 +46,7 @@
 #/vis/viewer/set/style wireframe
 #
 # Draw coordinate axes:
-/vis/scene/add/axes 0 0 0 200 nanometer
+#/vis/scene/add/axes 0 0 0 200 nanometer
 #
 # Draw smooth trajectories at end of event, showing trajectory points
 # as markers 2 pixels wide:
@@ -76,6 +78,10 @@
 # Re-establish auto refreshing and verbosity:
 /vis/viewer/set/autoRefresh true
 /vis/verbose warnings
+
+
+/analysis/setFileName SEY
+/analysis/h1/set 30 350 0.0 350 eV	
 #
 # For file-based drivers, use this to create an empty detector view:
 #/vis/viewer/flush

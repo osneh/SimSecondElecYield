@@ -41,7 +41,7 @@ DetectorConstruction::DetectorConstruction()
 {
    
    // default parameter values of the calorimeter
-   fAbsorberThickness = 400.*nm;
+   fAbsorberThickness = 800.*nm;
    fAbsorberSizeXY    = 400.*nm;
    //fXposAbs           = 0.*nm;
    fXposAbs           = 0.;//0.5*fAbsorberThickness;
@@ -162,10 +162,10 @@ void DetectorConstruction::ComputeGeomParameters()
   fXendAbs   = fXposAbs+0.5*fAbsorberThickness;
 
   G4double xmax = std::max(std::abs(fXstartAbs), std::abs(fXendAbs));
-  fWorldSizeX = 1.2*xmax; 
   //fWorldSizeX = 1.2*xmax; 
+  fWorldSizeX = 1.2*fAbsorberSizeXY; 
   fWorldSizeY= 1.2*fAbsorberSizeXY;
-  fWorldSizeZ= 1.2*fAbsorberSizeXY;
+  fWorldSizeZ= 1.2*fAbsorberThickness;
   if(nullptr != fPhysiWorld) { ChangeGeometry(); }
 }
 
@@ -196,7 +196,7 @@ G4VPhysicalVolume *DetectorConstruction::Construct()
   //                    fAbsorberThickness/2,fAbsorberSizeYZ/2,fAbsorberSizeYZ/2);
 
   fSolidAbsorber = new G4Tubs("Absorber",
-                              (fAbsorberSizeXY-350.*nm)/2,(fAbsorberSizeXY-250*nm)/2, fAbsorberThickness/2,
+                              (fAbsorberSizeXY-80.*nm)/2,(fAbsorberSizeXY-50*nm)/2, fAbsorberThickness/2,
                               0. , 
                               360.*deg);
 

@@ -6,6 +6,8 @@
 #include "G4Allocator.hh"
 #include "G4ThreeVector.hh"
 #include "G4VSensitiveDetector.hh"
+#include "G4RunManager.hh"
+#include "G4AnalysisManager.hh"
 
 class SensitiveDetector : public G4VSensitiveDetector 
 {

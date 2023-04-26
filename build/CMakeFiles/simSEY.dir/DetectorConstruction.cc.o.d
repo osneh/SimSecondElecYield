@@ -332,50 +332,6 @@ CMakeFiles/simSEY.dir/DetectorConstruction.cc.o: \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TouchableHistory.icc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4CollectionNameVector.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSDFilter.hh \
- /home/habreu/WORK/simsecondelecyield_NCP/DetectorMessenger.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UImessenger.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UIdirectory.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UIcommand.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UIparameter.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UItokenNum.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ApplicationState.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Material.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Box.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GeomTypes.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GeomConfig.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4CSGSolid.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSolid.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSolid.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Polyhedron.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/HepPolyhedron.h \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TwoVector.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Vector/TwoVector.h \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Vector/TwoVector.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Point3D.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Normal3D.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Visible.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Visible.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Box.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Tubs.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Tubs.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PVPlacement.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UniformMagField.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MagneticField.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Field.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GeometryManager.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SmartVoxelStat.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicalVolumeStore.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VStoreNotifier.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VNotifier.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4LogicalVolumeStore.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SolidStore.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UnitsTable.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UnitsTable.icc \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NistManager.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NistElementBuilder.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NistMaterialBuilder.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ICRU90StoppingData.hh \
- /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Pow.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4RunManager.hh \
  /usr/include/c++/8/list /usr/include/c++/8/bits/stl_list.h \
  /usr/include/c++/8/bits/list.tcc \
@@ -456,6 +412,8 @@ CMakeFiles/simSEY.dir/DetectorConstruction.cc.o: \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GRSSolid.icc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TouchableHistoryHandle.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NormalNavigation.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSolid.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VSolid.icc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AuxiliaryNavServices.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AuxiliaryNavServices.icc \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NormalNavigation.icc \
@@ -501,8 +459,110 @@ CMakeFiles/simSEY.dir/DetectorConstruction.cc.o: \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/trkgdefs.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TrackingMessenger.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UImessenger.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UIdirectory.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UIcommand.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UIparameter.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UItokenNum.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ApplicationState.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UserTrackingAction.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4RunManagerKernel.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AnalysisManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GenericAnalysisManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ToolsAnalysisManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VAnalysisManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AnalysisManagerState.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AnalysisVerbose.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VAnalysisManager.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4HnManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4BaseAnalysisManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Fcn.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4BinScheme.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4HnInformation.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4AnalysisUtilities.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NtupleBookingManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/ntuple_booking \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/cids \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/cid \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/typedefs \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/forit \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NtupleBookingManager.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VH1Manager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VH2Manager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VH3Manager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VP1Manager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VP2Manager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VNtupleManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VFileManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4BaseFileManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VTHnFileManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ToolsAnalysisMessenger.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4THnManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4THnManager.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/h1d \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/h1 \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/b1 \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/base_histo \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/histo_data \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/axes \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/axis \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/eqT \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/h2d \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/h2 \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/b2 \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/h3d \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/h3 \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/b3 \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/p1d \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/p1 \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/profile_data \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/p2d \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/tools/histo/p2 \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ToolsAnalysisManager.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4H1ToolsManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4H2ToolsManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4H3ToolsManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4P1ToolsManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4P2ToolsManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GenericAnalysisManager.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GenericFileManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GenericFileManager.icc \
+ /home/habreu/WORK/simsecondelecyield_NCP/DetectorMessenger.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UImessenger.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Material.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Box.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GeomTypes.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GeomConfig.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4CSGSolid.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Polyhedron.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/HepPolyhedron.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4TwoVector.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Vector/TwoVector.h \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/CLHEP/Vector/TwoVector.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Point3D.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Normal3D.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Visible.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Visible.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Box.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Tubs.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Tubs.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PVPlacement.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UniformMagField.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4MagneticField.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Field.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GeometryManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SmartVoxelStat.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicalVolumeStore.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VStoreNotifier.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4VNotifier.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4LogicalVolumeStore.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SolidStore.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UnitsTable.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4UnitsTable.icc \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NistManager.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NistElementBuilder.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4NistMaterialBuilder.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4ICRU90StoppingData.hh \
+ /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4Pow.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4PhysicalConstants.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4SystemOfUnits.hh \
  /home/habreu/WORK/geant4-v11.0.3-install/include/Geant4/G4GlobalMagFieldMessenger.hh \
